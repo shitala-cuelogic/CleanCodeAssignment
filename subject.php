@@ -1,7 +1,7 @@
 <?php
-  require('dbcon.php');
+  require('database.php');
 
-  class subject extends dbcon {
+  class subject extends Database {
 
    	function __construct() {
       parent::__construct();
@@ -33,8 +33,7 @@
       return $addNewSubjectHtmlCode;
     }
 
-     
-
+   
     public function getListdownSubjectName() {
       include './listdownsubjectname.php';
       return $listOfSubjectName;         
@@ -42,10 +41,10 @@
 
     public function getListdownSubjectNameHtmlTableCode($listOfSubjectName) {
       $strOfListdownSubjectNameTable = "";
-      foreach ($listOfSubjectName as $sub_id => $subjectName) {
+      foreach ($listOfSubjectName as $subject_id => $subjectName) {
         $strOfListdownSubjectNameTable .= '<tr>
                                             <td>'.$subjectName['subject'].'</td>
-                                            <td> <a href = "index.php?action=editSub&sub_id='.$sub_id.'">Edit </a> </td>
+                                            <td> <a href = "index.php?action=editSub&sub_id='.$subject_id.'">Edit </a> </td>
                                           </tr>';       
       }
       return $strOfListdownSubjectNameTable;         
