@@ -3,7 +3,7 @@
 
   class subject extends Database {
 
-   	function __construct() {
+   function __construct() {
       parent::__construct();
       
       if(!isset($_SESSION['usr_id'])) {
